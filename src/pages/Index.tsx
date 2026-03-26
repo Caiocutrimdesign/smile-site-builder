@@ -9,9 +9,9 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Index = () => (
-  <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-black">
+  <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-black overflow-x-hidden">
     <Header />
-    <main>
+    <main className="overflow-x-hidden">
       <Hero />
       <Differentials />
       <About />
