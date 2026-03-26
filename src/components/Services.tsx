@@ -18,11 +18,11 @@ const Services = () => (
         <div className="w-24 h-1 bg-primary mx-auto rounded-full" />
       </div>
 
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
         {services.map((s) => (
           <Card key={s.title} className="group hover:scale-105 transition-all duration-300 border-primary/10 bg-black/40 backdrop-blur-sm overflow-hidden relative">
             <div className="absolute top-0 left-0 w-1 h-0 bg-primary group-hover:h-full transition-all duration-500" />
-            <CardHeader className="p-8">
+            <CardHeader className="p-8 text-center flex flex-col items-center">
               <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 border border-primary/20 group-hover:bg-primary transition-colors duration-500">
                 <s.icon className="w-8 h-8 text-primary group-hover:text-black transition-colors duration-500" />
               </div>
@@ -33,9 +33,9 @@ const Services = () => (
         ))}
 
         {/* Protocolo Limpeza 360 Destaque */}
-        <Card className="lg:col-span-1 group transition-all duration-500 border-primary bg-gradient-to-br from-primary/20 via-black to-primary/5 relative overflow-hidden ring-2 ring-primary/50 shadow-[0_0_30px_rgba(212,175,55,0.2)]">
+        <Card className="group transition-all duration-500 border-primary bg-gradient-to-br from-primary/20 via-black to-primary/5 relative overflow-hidden ring-2 ring-primary/50 shadow-[0_0_30px_rgba(212,175,55,0.2)]">
           <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl" />
-          <CardHeader className="p-8">
+          <CardHeader className="p-8 text-center flex flex-col items-center">
             <div className="flex items-center gap-2 mb-4">
               <Star className="w-5 h-5 text-primary fill-primary animate-pulse" />
               <span className="text-primary font-black uppercase tracking-tighter text-xs">Destaque Exclusivo</span>
@@ -47,7 +47,7 @@ const Services = () => (
             <CardDescription className="text-white font-medium italic opacity-90 leading-relaxed">
               O cuidado mais completo para seu sorriso. Nossa tecnologia 360° garante uma limpeza profunda e preventiva de alto padrão.
             </CardDescription>
-            <div className="mt-8">
+            <div className="mt-8 w-full">
               <button 
                 className="w-full py-4 bg-primary text-black font-black uppercase tracking-widest text-sm rounded-xl hover:bg-white transition-colors border border-primary"
                 onClick={() => window.open("https://wa.me/5598984154556", "_blank")}
