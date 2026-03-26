@@ -1,32 +1,49 @@
-import heroImg from "@/assets/hero-dental.jpg";
 import { Button } from "@/components/ui/button";
-import { Phone, CalendarCheck } from "lucide-react";
+import { MessageSquare } from "lucide-react";
 
 const Hero = () => (
-  <section id="inicio" className="relative min-h-[90vh] flex items-center pt-16">
-    <div className="absolute inset-0">
-      <img src={heroImg} alt="Clínica odontológica moderna" className="w-full h-full object-cover" width={1920} height={1080} />
-      <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 to-foreground/30" />
+  <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    {/* Background Image with Dark Overlay */}
+    <div className="absolute inset-0 z-0">
+      <img 
+        src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=2000" 
+        alt="Premium Dental Clinic" 
+        className="w-full h-full object-cover scale-105 animate-slow-zoom"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/90" />
     </div>
 
-    <div className="container relative z-10 mx-auto px-4 py-20">
-      <div className="max-w-xl space-y-6">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight">
-          Seu sorriso merece o <span className="text-primary">melhor cuidado</span>
+    {/* Content */}
+    <div className="container relative z-10 mx-auto px-4 text-center">
+      <div className="max-w-4xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-8 duration-1000">
+        <h2 className="text-primary font-bold tracking-[0.3em] uppercase text-sm md:text-base animate-pulse">
+          BCLINIC – Clínica Odontológica | Estética Orofacial
+        </h2>
+        
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-tight tracking-tight">
+          Sorrir muda <span className="text-primary italic">tudo.</span>
         </h1>
-        <p className="text-lg text-primary-foreground/80">
-          Tratamentos odontológicos modernos com profissionais qualificados. 
-          Agende sua consulta e transforme seu sorriso.
+        
+        <p className="text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto font-light leading-relaxed">
+          Experiência odontológica de alto padrão com foco em transformar sorrisos e elevar a autoestima.
         </p>
-        <div className="flex flex-wrap gap-3">
-          <Button size="lg">
-            <CalendarCheck className="w-5 h-5 mr-2" /> Agendar Consulta
-          </Button>
-          <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
-            <Phone className="w-5 h-5 mr-2" /> (11) 99999-0000
+        
+        <div className="pt-4">
+          <Button 
+            size="lg" 
+            className="bg-primary hover:bg-accent text-primary-foreground font-black text-lg px-8 py-7 rounded-full transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] group"
+            onClick={() => window.open("https://wa.me/5598984154556", "_blank")}
+          >
+            <MessageSquare className="w-6 h-6 mr-3 group-hover:rotate-12 transition-transform" />
+            AGENDAR PELO WHATSAPP
           </Button>
         </div>
       </div>
+    </div>
+
+    {/* Scroll Indicator */}
+    <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+      <div className="w-1 h-12 rounded-full bg-gradient-to-b from-primary to-transparent" />
     </div>
   </section>
 );
