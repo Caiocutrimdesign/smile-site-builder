@@ -36,6 +36,9 @@ const Footer = () => (
         <p className="text-foreground/20 text-xs">
           © {new Date().getFullYear()} BCLINIC. Criado com elegância para o seu bem-estar.
         </p>
+        <p className="text-foreground/15 text-[10px] mt-2">
+          Desenvolvedor: <a href="https://www.caiocutrimdesigner.com.br" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">www.caiocutrimdesigner.com.br</a>
+        </p>
       </div>
     </div>
   </footer>
