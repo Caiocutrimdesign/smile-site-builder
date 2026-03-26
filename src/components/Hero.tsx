@@ -18,7 +18,6 @@ const Hero = () => (
     {/* Content */}
     <div className="container relative z-10 mx-auto px-4 text-center">
       <div className="max-w-4xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-8 duration-1000">
-        <img src={logoBclinic} alt="BCLINIC Logo" className="w-48 md:w-64 mx-auto" />
         
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-tight tracking-tight">
           Sorrir muda <span className="text-primary italic">tudo.</span>

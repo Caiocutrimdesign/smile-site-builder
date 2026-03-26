@@ -27,7 +27,11 @@ const Header = () => {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/95 backdrop-blur-md border-b border-primary/20 py-2" : "bg-transparent py-4"}`}>
       <div className="container mx-auto flex items-center justify-between px-4">
         <a href="#inicio" className="flex items-center gap-2 group">
-          <img src={logoBclinic} alt="BCLINIC" className="h-10" />
+          <img 
+            src={logoBclinic} 
+            alt="BCLINIC" 
+            className="h-16 md:h-20 object-contain mix-blend-screen hover:scale-105 transition-transform" 
+          />
         </a>
 
         <nav className="hidden md:flex items-center gap-8">
