@@ -70,11 +70,12 @@ ${formData.obs ? `*Observações:* \n${formData.obs}` : ""}`;
     }
 
     setLoading(true);
-    setTimeout(() => {
-      const waLink = `https://wa.me/5598984154556?text=${formatWhatsAppMessage()}`;
-      window.open(waLink, "_blank");
-      setLoading(false);
-    }, 1500);
+    const waLink = `https://wa.me/5598984154556?text=${formatWhatsAppMessage()}`;
+    
+    // Immediate redirect to avoid popup blockers
+    window.location.href = waLink;
+    
+    setTimeout(() => setLoading(false), 2000);
   };
 
   return (
