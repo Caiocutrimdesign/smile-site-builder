@@ -2,10 +2,9 @@ import { useState } from "react";
 import { Maximize2 } from "lucide-react";
 
 const Gallery = () => {
-  const [filter, setFilter] = useState("todos");
+  const [filter, setFilter] = useState("resultados");
   
   const categories = [
-    { id: "todos", label: "Ver Tudo" },
     { id: "resultados", label: "Resultados (A/D)" },
     { id: "clinica", label: "A Clínica & Tratamentos" },
   ];
@@ -33,9 +32,7 @@ const Gallery = () => {
     src: `/gallery${img.id}.jpeg`
   }));
 
-  const filteredImages = filter === "todos" 
-    ? images 
-    : images.filter(img => img.cat === filter);
+  const filteredImages = images.filter(img => img.cat === filter);
 
   return (
     <section id="galeria" className="py-24 bg-black relative overflow-hidden">
