@@ -19,6 +19,11 @@ const Footer = () => (
             <a href="#servicos" className="text-foreground/60 hover:text-primary text-sm transition-colors">Serviços</a>
             <a href="#galeria" className="text-foreground/60 hover:text-primary text-sm transition-colors">Galeria</a>
           </nav>
+          <div className="flex gap-4 pt-2">
+            <a href="https://instagram.com/drbergsonlindoso" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-white transition-colors">Instagram</a>
+            <span className="text-white/10">|</span>
+            <a href="mailto:drbergsonlindoso@gmail.com" className="text-primary hover:text-white transition-colors">E-mail</a>
+          </div>
         </div>
 
         <div className="text-center md:text-right space-y-4 flex flex-col items-center md:items-end">
