@@ -6,7 +6,7 @@ const Footer = () => (
       <div className="grid gap-12 md:grid-cols-3 items-start">
         <div className="space-y-6 text-center md:text-left">
           <a href="#inicio">
-            <img src={logoBclinic} alt="BCLINIC" className="h-12 mx-auto md:mx-0" />
+            <img src="/favicon.ico.png" alt="BCLINIC" className="h-16 mx-auto md:mx-0" />
           </a>
           <p className="text-foreground/40 text-sm leading-relaxed max-w-xs mx-auto md:mx-0">
             Clínica Odontológica e Estética Orofacial de alto padrão. Tecnologia e humanização para o seu sorriso.

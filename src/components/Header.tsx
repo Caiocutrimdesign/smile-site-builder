@@ -28,9 +28,9 @@ const Header = () => {
       <div className="container mx-auto flex items-center justify-between px-4">
         <a href="#inicio" className="flex items-center gap-2 group">
           <img 
-            src={logoBclinic} 
+            src="/favicon.ico.png" 
             alt="BCLINIC" 
-            className="h-16 md:h-20 object-contain mix-blend-screen hover:scale-105 transition-transform" 
+            className="h-20 md:h-24 object-contain hover:scale-105 transition-transform" 
           />
         </a>
 
