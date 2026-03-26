@@ -67,8 +67,8 @@ export default {
           "100%": { transform: "scale(1.1)" },
         },
         "logo-glow": {
-          "0%, 100%": { filter: "drop-shadow(0 0 8px rgba(212,175,55,0.4))" },
-          "50%": { filter: "drop-shadow(0 0 20px rgba(212,175,55,0.7))" },
+          "0%, 100%": { filter: "drop-shadow(0 0 10px rgba(212,175,55,0.4))" },
+          "50%": { filter: "drop-shadow(0 0 40px rgba(212,175,55,0.9))" },
         },
       },
       animation: {
