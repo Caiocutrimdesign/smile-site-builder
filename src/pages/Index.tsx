@@ -7,7 +7,7 @@ import Gallery from "@/components/Gallery";
 import Booking from "@/components/Booking";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import FloatingActions from "@/components/FloatingActions";
 
 const Index = () => (
   <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-black overflow-x-hidden">
@@ -22,7 +22,7 @@ const Index = () => (
       <Contact />
     </main>
     <Footer />
-    <WhatsAppButton />
+    <FloatingActions />
   </div>
 );
 

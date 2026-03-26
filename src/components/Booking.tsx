@@ -134,7 +134,7 @@ ${formData.obs ? `*Observações:* \n${formData.obs}` : ""}`;
                     <label className="text-[10px] uppercase font-black tracking-widest text-primary/60 px-4">E-mail</label>
                     <Input 
                       name="email" value={formData.email} onChange={handleInputChange}
-                      type="email" placeholder="seu@email.com" 
+                      type="email" placeholder="drbergsonlindoso@gmail.com" 
                       className="bg-black/50 border-white/10 rounded-2xl h-14 px-6" 
                     />
                   </div>

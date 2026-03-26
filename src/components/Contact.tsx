@@ -42,7 +42,17 @@ const Contact = () => (
                 </div>
                 <div className="text-left">
                   <p className="text-xs text-primary font-black uppercase tracking-widest mb-1">Redes Sociais</p>
-                  <p className="text-xl text-white font-medium">@bclinic.odonto</p>
+                  <p className="text-xl text-white font-medium">@drbergsonlindoso</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-6 group justify-center md:justify-start">
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center border border-primary/20 group-hover:bg-primary transition-all duration-500 flex-shrink-0">
+                  <MessageSquare className="w-6 h-6 text-primary group-hover:text-black" />
+                </div>
+                <div className="text-left">
+                  <p className="text-xs text-primary font-black uppercase tracking-widest mb-1">E-mail</p>
+                  <p className="text-xl text-white font-medium">drbergsonlindoso@gmail.com</p>
                 </div>
               </div>
             </div>
