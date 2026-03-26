@@ -1,4 +1,5 @@
 import { CheckCircle2 } from "lucide-react";
+import drBergson from "@/assets/dr-bergson.jpeg";
 
 const About = () => (
   <section id="sobre" className="py-24 bg-background overflow-hidden">
@@ -8,8 +9,8 @@ const About = () => (
           <div className="absolute -inset-4 bg-primary/20 rounded-2xl blur-2xl group-hover:bg-primary/30 transition-all duration-700" />
           <div className="relative overflow-hidden rounded-2xl border border-primary/20 shadow-2xl">
             <img 
-              src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=1000" 
-              alt="Dr. Bergson Lindoso" 
+              src={drBergson} 
+              alt="Dr. Bergson Lindoso"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             />
           </div>
