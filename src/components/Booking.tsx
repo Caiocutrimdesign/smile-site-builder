@@ -99,7 +99,7 @@ ${formData.obs ? `*Observações:* \n${formData.obs}` : ""}`;
 
         <form onSubmit={handleSubmit} className="max-w-6xl mx-auto grid gap-12 lg:grid-cols-2">
           {/* Left: Client Info */}
-          <div className="space-y-8 bg-zinc-900/40 p-8 md:p-12 rounded-[2.5rem] border border-white/5 backdrop-blur-xl">
+          <div className="space-y-8 bg-zinc-900/40 p-6 md:p-12 rounded-[2rem] md:rounded-[2.5rem] border border-white/5 backdrop-blur-xl">
             <div className="space-y-6">
               <h3 className="text-white text-xl font-bold flex items-center gap-3">
                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20">
@@ -236,8 +236,8 @@ ${formData.obs ? `*Observações:* \n${formData.obs}` : ""}`;
                   exit={{ opacity: 0, y: 20 }}
                   className="bg-primary p-8 rounded-[2.5rem] shadow-[0_20px_50px_rgba(212,175,55,0.2)]"
                 >
-                  <div className="flex justify-between items-end gap-6">
-                    <div className="space-y-2">
+                  <div className="flex flex-col md:flex-row justify-between items-center md:items-end gap-6">
+                    <div className="space-y-2 text-center md:text-left">
                        <p className="text-black/60 font-black uppercase text-[10px] tracking-widest">Resumo do Pedido</p>
                        <h4 className="text-black font-black text-2xl italic">Pronto para agendar?</h4>
                        <p className="text-black/80 text-sm font-medium">
@@ -247,7 +247,7 @@ ${formData.obs ? `*Observações:* \n${formData.obs}` : ""}`;
                     <Button 
                       disabled={loading}
                       type="submit"
-                      className="bg-black text-white hover:bg-zinc-800 h-20 px-10 rounded-3xl font-black uppercase tracking-widest text-xs flex flex-col gap-1 items-center"
+                      className="w-full md:w-auto bg-black text-white hover:bg-zinc-800 h-20 px-10 rounded-3xl font-black uppercase tracking-widest text-xs flex flex-col gap-1 items-center"
                     >
                       {loading ? (
                         <div className="flex items-center gap-2">
