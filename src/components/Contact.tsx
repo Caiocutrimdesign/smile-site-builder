@@ -1,4 +1,5 @@
 import { Phone, MapPin, Instagram, MessageSquare, Clock } from "lucide-react";
+import drBergson from "@/assets/dr-bergson.jpeg";
 import { Button } from "@/components/ui/button";
 
 const Contact = () => (
@@ -62,8 +63,8 @@ const Contact = () => (
               <div className="bg-black rounded-[1.9rem] p-10 space-y-8 text-center">
                 <div className="w-32 h-32 mx-auto rounded-full border-2 border-primary p-1 bg-black">
                   <img 
-                    src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=400" 
-                    alt="Dr. Bergson Lindoso" 
+                    src={drBergson} 
+                    alt="Dr. Bergson Lindoso"
                     className="w-full h-full object-cover rounded-full" 
                   />
                 </div>

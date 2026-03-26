@@ -1,10 +1,12 @@
+import logoBclinic from "@/assets/logo-bclinic.jpeg";
+
 const Footer = () => (
   <footer className="py-16 bg-black border-t border-primary/10">
     <div className="container mx-auto px-4">
       <div className="grid gap-12 md:grid-cols-3 items-start">
         <div className="space-y-6 text-center md:text-left">
-          <a href="#inicio" className="text-3xl font-black text-primary tracking-tighter uppercase italic">
-            BCLINIC
+          <a href="#inicio">
+            <img src={logoBclinic} alt="BCLINIC" className="h-12 mx-auto md:mx-0" />
           </a>
           <p className="text-foreground/40 text-sm leading-relaxed max-w-xs mx-auto md:mx-0">
             Clínica Odontológica e Estética Orofacial de alto padrão. Tecnologia e humanização para o seu sorriso.

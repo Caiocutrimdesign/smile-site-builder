@@ -1,13 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { MessageSquare } from "lucide-react";
+import clinicBg from "@/assets/clinic-bg.jpeg";
+import logoBclinic from "@/assets/logo-bclinic.jpeg";
 
 const Hero = () => (
   <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
     {/* Background Image with Dark Overlay */}
     <div className="absolute inset-0 z-0">
       <img 
-        src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=2000" 
-        alt="Premium Dental Clinic" 
+        src={clinicBg} 
+        alt="BCLINIC - Sala de Espera" 
         className="w-full h-full object-cover scale-105 animate-slow-zoom"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/90" />
@@ -16,9 +18,7 @@ const Hero = () => (
     {/* Content */}
     <div className="container relative z-10 mx-auto px-4 text-center">
       <div className="max-w-4xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-8 duration-1000">
-        <h2 className="text-primary font-bold tracking-[0.3em] uppercase text-sm md:text-base animate-pulse">
-          BCLINIC – Clínica Odontológica | Estética Orofacial
-        </h2>
+        <img src={logoBclinic} alt="BCLINIC Logo" className="w-48 md:w-64 mx-auto" />
         
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-tight tracking-tight">
           Sorrir muda <span className="text-primary italic">tudo.</span>
