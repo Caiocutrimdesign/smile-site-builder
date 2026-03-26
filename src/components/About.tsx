@@ -4,10 +4,10 @@ import drBergson from "@/assets/dr-bergson.jpeg";
 const About = () => (
   <section id="sobre" className="py-24 bg-background overflow-hidden">
     <div className="container mx-auto px-4">
-      <div className="flex flex-col lg:flex-row items-center gap-16">
-        <div className="lg:w-1/2 relative group">
+      <div className="flex flex-col lg:flex-row items-center gap-16 max-w-6xl mx-auto">
+        <div className="lg:w-1/2 relative group flex justify-center">
           <div className="absolute -inset-4 bg-primary/20 rounded-2xl blur-2xl group-hover:bg-primary/30 transition-all duration-700" />
-          <div className="relative overflow-hidden rounded-2xl border border-primary/20 shadow-2xl">
+          <div className="relative overflow-hidden rounded-2xl border border-primary/20 shadow-2xl max-w-md w-full">
             <img 
               src={drBergson} 
               alt="Dr. Bergson Lindoso"
@@ -16,7 +16,7 @@ const About = () => (
           </div>
         </div>
 
-        <div className="lg:w-1/2 space-y-8">
+        <div className="lg:w-1/2 space-y-8 text-center lg:text-left">
           <div className="space-y-4">
             <h3 className="text-primary font-bold tracking-widest uppercase text-sm">Excelência & Cuidado</h3>
             <h2 className="text-4xl md:text-5xl font-black text-white leading-tight">
@@ -36,10 +36,10 @@ const About = () => (
               "Planejamento Individualizado",
               "Foco em Prevenção",
               "Estética de Alto Padrão",
-               "Equipamentos Modernos",
+              "Equipamentos Modernos",
             ].map((item) => (
-              <div key={item} className="flex items-center gap-3">
-                <CheckCircle2 className="w-5 h-5 text-primary" />
+              <div key={item} className="flex items-center gap-3 justify-center lg:justify-start">
+                <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
                 <span className="text-foreground/90 font-medium">{item}</span>
               </div>
             ))}

@@ -1,29 +1,35 @@
 import { Button } from "@/components/ui/button";
 import { MessageSquare } from "lucide-react";
 import clinicBg from "@/assets/clinic-bg.jpeg";
-import logoBclinic from "@/assets/logo-bclinic.jpeg";
 
 const Hero = () => (
   <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-    {/* Background Image with Dark Overlay */}
+    {/* Background */}
     <div className="absolute inset-0 z-0">
       <img 
         src={clinicBg} 
         alt="BCLINIC - Sala de Espera" 
-        className="w-full h-full object-cover scale-105 animate-slow-zoom"
+        className="w-full h-full object-cover animate-slow-zoom"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/90" />
     </div>
 
     {/* Content */}
-    <div className="container relative z-10 mx-auto px-4 text-center">
-      <div className="max-w-4xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-8 duration-1000">
+    <div className="container relative z-10 mx-auto px-4 text-center flex flex-col items-center justify-center">
+      <div className="max-w-4xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-8 duration-1000 flex flex-col items-center">
         
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-tight tracking-tight">
+        {/* Logo */}
+        <img 
+          src="/favicon.ico.png" 
+          alt="BCLINIC" 
+          className="h-28 md:h-36 object-contain animate-logo-glow mb-2" 
+        />
+
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-tight tracking-tight text-center">
           Sorrir muda <span className="text-primary italic">tudo.</span>
         </h1>
         
-        <p className="text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto font-light leading-relaxed">
+        <p className="text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto font-light leading-relaxed text-center">
           Experiência odontológica de alto padrão com foco em transformar sorrisos e elevar a autoestima.
         </p>
         

@@ -7,48 +7,48 @@ const Contact = () => (
     <div className="container mx-auto px-4">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-10">
+          <div className="space-y-10 text-center md:text-left">
             <div className="space-y-4">
               <h3 className="text-primary font-bold tracking-[0.2em] uppercase text-sm">Fale Conosco</h3>
-              <h2 className="text-5xl font-black text-white italic tracking-tighter">
+              <h2 className="text-4xl md:text-5xl font-black text-white italic tracking-tighter">
                 Sua transformação começa <span className="text-primary">aqui.</span>
               </h2>
             </div>
 
             <div className="space-y-8">
-              <div className="flex items-center gap-6 group">
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center border border-primary/20 group-hover:bg-primary transition-all duration-500">
+              <div className="flex items-center gap-6 group justify-center md:justify-start">
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center border border-primary/20 group-hover:bg-primary transition-all duration-500 flex-shrink-0">
                   <Phone className="w-6 h-6 text-primary group-hover:text-black" />
                 </div>
-                <div>
+                <div className="text-left">
                   <p className="text-xs text-primary font-black uppercase tracking-widest mb-1">WhatsApp</p>
                   <p className="text-2xl text-white font-bold tracking-tight">(98) 98415-4556</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-6 group">
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center border border-primary/20 group-hover:bg-primary transition-all duration-500">
+              <div className="flex items-center gap-6 group justify-center md:justify-start">
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center border border-primary/20 group-hover:bg-primary transition-all duration-500 flex-shrink-0">
                   <MapPin className="w-6 h-6 text-primary group-hover:text-black" />
                 </div>
-                <div>
+                <div className="text-left">
                   <p className="text-xs text-primary font-black uppercase tracking-widest mb-1">Localização</p>
                   <p className="text-xl text-white font-medium">Coque | Vitória do Mearim</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-6 group">
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center border border-primary/20 group-hover:bg-primary transition-all duration-500">
+              <div className="flex items-center gap-6 group justify-center md:justify-start">
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center border border-primary/20 group-hover:bg-primary transition-all duration-500 flex-shrink-0">
                   <Instagram className="w-6 h-6 text-primary group-hover:text-black" />
                 </div>
-                <div>
+                <div className="text-left">
                   <p className="text-xs text-primary font-black uppercase tracking-widest mb-1">Redes Sociais</p>
                   <p className="text-xl text-white font-medium">@bclinic.odonto</p>
                 </div>
               </div>
             </div>
             
-            <div className="p-8 rounded-3xl bg-primary/5 border border-primary/10">
-              <div className="flex items-center gap-3 mb-4">
+            <div className="p-8 rounded-3xl bg-primary/5 border border-primary/10 text-center md:text-left">
+              <div className="flex items-center gap-3 mb-4 justify-center md:justify-start">
                 <Clock className="w-5 h-5 text-primary" />
                 <h4 className="text-white font-bold uppercase text-xs tracking-widest">Horário de Atendimento</h4>
               </div>
@@ -57,9 +57,9 @@ const Contact = () => (
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative flex justify-center">
             <div className="absolute -inset-4 bg-primary/20 rounded-[2rem] blur-3xl opacity-50" />
-            <div className="relative bg-gradient-to-br from-primary/20 to-black p-1 rounded-[2rem] border border-primary/30">
+            <div className="relative bg-gradient-to-br from-primary/20 to-black p-1 rounded-[2rem] border border-primary/30 max-w-md w-full">
               <div className="bg-black rounded-[1.9rem] p-10 space-y-8 text-center">
                 <div className="w-32 h-32 mx-auto rounded-full border-2 border-primary p-1 bg-black">
                   <img 
