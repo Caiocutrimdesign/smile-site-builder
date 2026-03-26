@@ -19,7 +19,7 @@ const Gallery = () => (
           <div key={c.id} className="group relative overflow-hidden rounded-[2.5rem] border border-primary/10 bg-secondary/20 shadow-2xl">
             <div className="aspect-[4/5] relative">
               <img 
-                src={`https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&q=80&w=800&case=${c.id}`} 
+                src={`/gallery${c.id}.jpeg`} 
                 alt={c.title} 
                 className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110"
               />
