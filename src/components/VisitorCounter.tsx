@@ -2,35 +2,30 @@ import React, { useEffect, useState } from "react";
 import { Eye, TrendingUp } from "lucide-react";
 
 const VisitorCounter = () => {
-  // Initialize state directly from localStorage if available to prevent flash of 0
+  // Initialize state directly from localStorage if available
   const [count, setCount] = useState<number>(() => {
-    const saved = localStorage.getItem("bclinic_visitor_v1");
+    const saved = localStorage.getItem("bclinic_visitor_v2");
     if (saved) {
       const parsed = parseInt(saved, 10);
-      return isNaN(parsed) ? 1254 : parsed;
+      return isNaN(parsed) ? 0 : parsed;
     }
-    return 1254; // Default starting count
+    return 0; // Default starting count is now 0
   });
 
   useEffect(() => {
-    // 1. Check if already counted this session
-    const hasCounted = sessionStorage.getItem("bclinic_session_v1");
+    // Increment on every mount (for each "visit" to this component)
+    setCount((prev) => {
+      const next = prev + 1;
+      localStorage.setItem("bclinic_visitor_v2", next.toString());
+      return next;
+    });
 
-    if (!hasCounted) {
-      setCount((prev) => {
-        const next = prev + 1;
-        localStorage.setItem("bclinic_visitor_v1", next.toString());
-        sessionStorage.setItem("bclinic_session_v1", "true");
-        return next;
-      });
-    }
-
-    // 2. Simulation: Occasional random growth (keeps it feeling "alive")
+    // Simulation: Occasional random growth to make it feel active
     const interval = setInterval(() => {
-      if (Math.random() > 0.98) { // 2% chance every 30 seconds
+      if (Math.random() > 0.95) { // 5% chance every 30 seconds
         setCount((prev) => {
           const next = prev + 1;
-          localStorage.setItem("bclinic_visitor_v1", next.toString());
+          localStorage.setItem("bclinic_visitor_v2", next.toString());
           return next;
         });
       }
@@ -46,7 +41,7 @@ const VisitorCounter = () => {
       </div>
       <div className="flex flex-col">
         <span className="text-[10px] uppercase tracking-wider text-muted-foreground font-medium whitespace-nowrap">
-          Visitas no sistema
+          Visitantes
         </span>
         <div className="flex items-center gap-2">
           <span className="text-lg font-bold text-primary font-mono leading-none">
