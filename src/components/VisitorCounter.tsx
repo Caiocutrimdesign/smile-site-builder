@@ -2,31 +2,36 @@ import React, { useEffect, useState } from "react";
 import { Eye, TrendingUp } from "lucide-react";
 
 const VisitorCounter = () => {
-  const [count, setCount] = useState<number>(0);
+  // Initialize state directly from localStorage if available to prevent flash of 0
+  const [count, setCount] = useState<number>(() => {
+    const saved = localStorage.getItem("bclinic_visitor_v1");
+    if (saved) {
+      const parsed = parseInt(saved, 10);
+      return isNaN(parsed) ? 1254 : parsed;
+    }
+    return 1254; // Default starting count
+  });
 
   useEffect(() => {
-    // 1. Initialize or get current count from localStorage
-    const savedCount = localStorage.getItem("bclinic_visitor_count");
-    let currentCount = savedCount ? parseInt(savedCount, 10) : 1254; // Start with a realistic base if new
-
-    // 2. Check if already counted this session
-    const hasCounted = sessionStorage.getItem("bclinic_session_counted");
+    // 1. Check if already counted this session
+    const hasCounted = sessionStorage.getItem("bclinic_session_v1");
 
     if (!hasCounted) {
-      currentCount += 1;
-      localStorage.setItem("bclinic_visitor_count", currentCount.toString());
-      sessionStorage.setItem("bclinic_session_counted", "true");
+      setCount((prev) => {
+        const next = prev + 1;
+        localStorage.setItem("bclinic_visitor_v1", next.toString());
+        sessionStorage.setItem("bclinic_session_v1", "true");
+        return next;
+      });
     }
 
-    setCount(currentCount);
-
-    // 3. Simulation: Occasional random growth
+    // 2. Simulation: Occasional random growth (keeps it feeling "alive")
     const interval = setInterval(() => {
-      if (Math.random() > 0.95) { // 5% chance every 30 seconds
+      if (Math.random() > 0.98) { // 2% chance every 30 seconds
         setCount((prev) => {
-          const newCount = prev + 1;
-          localStorage.setItem("bclinic_visitor_count", newCount.toString());
-          return newCount;
+          const next = prev + 1;
+          localStorage.setItem("bclinic_visitor_v1", next.toString());
+          return next;
         });
       }
     }, 30000);
@@ -40,7 +45,7 @@ const VisitorCounter = () => {
         <Eye className="w-4 h-4 shadow-primary/50" />
       </div>
       <div className="flex flex-col">
-        <span className="text-[10px] uppercase tracking-wider text-muted-foreground font-medium">
+        <span className="text-[10px] uppercase tracking-wider text-muted-foreground font-medium whitespace-nowrap">
           Visitas no sistema
         </span>
         <div className="flex items-center gap-2">

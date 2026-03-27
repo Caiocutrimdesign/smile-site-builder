@@ -1,14 +1,15 @@
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
-  { label: "Início", href: "/#inicio" },
-  { label: "A Clínica", href: "/#sobre" },
-  { label: "Equipe", href: "/equipe" },
-  { label: "Serviços", href: "/#servicos" },
-  { label: "Galeria", href: "/#galeria" },
-  { label: "Contato", href: "/#contato" },
+  { label: "Início", href: "/", isHash: true, hash: "#inicio" },
+  { label: "A Clínica", href: "/", isHash: true, hash: "#sobre" },
+  { label: "Equipe", href: "/equipe", isHash: false },
+  { label: "Serviços", href: "/", isHash: true, hash: "#servicos" },
+  { label: "Galeria", href: "/", isHash: true, hash: "#galeria" },
+  { label: "Contato", href: "/", isHash: true, hash: "#contato" },
 ];
 
 import VisitorCounter from "./VisitorCounter";
@@ -26,24 +27,34 @@ const Header = () => {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-background/95 backdrop-blur-md border-b border-primary/20 py-2" : "bg-transparent py-4"}`}>
       <div className="container mx-auto flex items-center justify-between px-4">
-        <a href="#inicio" className="flex items-center justify-center gap-2 group">
+        <Link to="/" className="flex items-center justify-center gap-2 group">
           <img 
             src="/favicon.ico.png" 
             alt="BCLINIC" 
             className="h-16 md:h-24 object-contain hover:scale-105 transition-transform animate-logo-glow" 
 
           />
-        </a>
+        </Link>
 
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors tracking-wide uppercase relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary after:scale-x-0 after:origin-center after:transition-transform after:duration-300 hover:after:scale-x-100"
-            >
-              {l.label}
-            </a>
+            l.isHash ? (
+              <a
+                key={l.label}
+                href={l.href + l.hash}
+                className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors tracking-wide uppercase relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary after:scale-x-0 after:origin-center after:transition-transform after:duration-300 hover:after:scale-x-100"
+              >
+                {l.label}
+              </a>
+            ) : (
+              <Link
+                key={l.label}
+                to={l.href}
+                className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors tracking-wide uppercase relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary after:scale-x-0 after:origin-center after:transition-transform after:duration-300 hover:after:scale-x-100"
+              >
+                {l.label}
+              </Link>
+            )
           ))}
         </nav>
 
@@ -66,14 +77,25 @@ const Header = () => {
       {open && (
         <div className="md:hidden bg-background/98 backdrop-blur-xl border-b border-primary/20 px-6 pb-6 pt-4 space-y-4 animate-in fade-in slide-in-from-top-4">
           {navLinks.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              className="block text-lg font-medium text-foreground/80 hover:text-primary transition-colors py-1"
-            >
-              {l.label}
-            </a>
+            l.isHash ? (
+              <a
+                key={l.label}
+                href={l.href + l.hash}
+                onClick={() => setOpen(false)}
+                className="block text-lg font-medium text-foreground/80 hover:text-primary transition-colors py-1"
+              >
+                {l.label}
+              </a>
+            ) : (
+              <Link
+                key={l.label}
+                to={l.href}
+                onClick={() => setOpen(false)}
+                className="block text-lg font-medium text-foreground/80 hover:text-primary transition-colors py-1"
+              >
+                {l.label}
+              </Link>
+            )
           ))}
           <div className="pt-2 pb-4">
              <VisitorCounter />
