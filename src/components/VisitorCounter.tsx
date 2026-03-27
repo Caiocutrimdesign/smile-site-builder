@@ -2,41 +2,31 @@ import React, { useEffect, useState } from "react";
 import { Eye, TrendingUp } from "lucide-react";
 
 const VisitorCounter = () => {
+  // Use a new versioned key to ensuring a fresh start at 0 for all users
+  const STORAGE_KEY = "bclinic_visitor_v2_real";
+  const SESSION_KEY = "bclinic_session_v2_active";
+
   const [count, setCount] = useState<number>(() => {
-    // 1. Get current count from localStorage
-    const saved = localStorage.getItem("bclinic_visitor_final_v1");
+    const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) {
       const parsed = parseInt(saved, 10);
-      return isNaN(parsed) ? 1254 : parsed;
+      return isNaN(parsed) ? 0 : parsed;
     }
-    return 1254; // Use the example base count
+    return 0; // Starts at 0 as requested
   });
 
   useEffect(() => {
-    // 2. Check if already counted this session (sessionStorage clears when window/tab closes)
-    const hasCounted = sessionStorage.getItem("bclinic_session_final_v1");
+    // 1. Check if this visit has already been counted in the current session
+    const hasBeenCounted = sessionStorage.getItem(SESSION_KEY);
 
-    if (!hasCounted) {
+    if (!hasBeenCounted) {
       setCount((prev) => {
         const next = prev + 1;
-        localStorage.setItem("bclinic_visitor_final_v1", next.toString());
-        sessionStorage.setItem("bclinic_session_final_v1", "true");
+        localStorage.setItem(STORAGE_KEY, next.toString());
+        sessionStorage.setItem(SESSION_KEY, "true");
         return next;
       });
     }
-
-    // 3. Smart Simulation: Occasional random growth
-    const interval = setInterval(() => {
-      if (Math.random() > 0.97) { // 3% chance every 30 seconds
-        setCount((prev) => {
-          const next = prev + 1;
-          localStorage.setItem("bclinic_visitor_final_v1", next.toString());
-          return next;
-        });
-      }
-    }, 30000);
-
-    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -46,7 +36,7 @@ const VisitorCounter = () => {
       </div>
       <div className="flex flex-col">
         <span className="text-[10px] uppercase tracking-wider text-muted-foreground font-medium whitespace-nowrap">
-          Visitas no sistema
+          Visitas
         </span>
         <div className="flex items-center gap-2">
           <span className="text-lg font-bold text-primary font-mono leading-none tracking-tighter">
