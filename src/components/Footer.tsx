@@ -1,3 +1,5 @@
+import VisitorCounter from "./VisitorCounter";
+
 const Footer = () => (
   <footer className="py-16 bg-black border-t border-primary/10">
     <div className="container mx-auto px-4">
@@ -35,7 +37,10 @@ const Footer = () => (
         </div>
       </div>
       
-      <div className="mt-16 pt-8 border-t border-primary/5 text-center space-y-2">
+      <div className="mt-16 pt-8 border-t border-primary/5 text-center space-y-4">
+        <div className="flex justify-center pb-4">
+           <VisitorCounter />
+        </div>
         <p className="text-foreground/20 text-xs">
           © {new Date().getFullYear()} BCLINIC. Criado com elegância para o seu bem-estar.
         </p>

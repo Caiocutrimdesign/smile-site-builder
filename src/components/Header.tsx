@@ -3,12 +3,15 @@ import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
-  { label: "Início", href: "#inicio" },
-  { label: "A Clínica", href: "#sobre" },
-  { label: "Serviços", href: "#servicos" },
-  { label: "Galeria", href: "#galeria" },
-  { label: "Contato", href: "#contato" },
+  { label: "Início", href: "/#inicio" },
+  { label: "A Clínica", href: "/#sobre" },
+  { label: "Equipe", href: "/equipe" },
+  { label: "Serviços", href: "/#servicos" },
+  { label: "Galeria", href: "/#galeria" },
+  { label: "Contato", href: "/#contato" },
 ];
+
+import VisitorCounter from "./VisitorCounter";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -44,7 +47,8 @@ const Header = () => {
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center">
+        <div className="hidden md:flex items-center gap-6">
+          <VisitorCounter />
           <Button 
             size="sm" 
             className="bg-primary hover:bg-accent text-primary-foreground font-bold shadow-[0_0_15px_rgba(212,175,55,0.3)] rounded-full"
@@ -71,6 +75,9 @@ const Header = () => {
               {l.label}
             </a>
           ))}
+          <div className="pt-2 pb-4">
+             <VisitorCounter />
+          </div>
           <Button 
             size="lg" 
             className="w-full bg-primary hover:bg-accent text-primary-foreground font-bold rounded-full"
