@@ -8,6 +8,7 @@ import Booking from "@/components/Booking";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import FloatingActions from "@/components/FloatingActions";
+import TeamHighlight from "@/components/TeamHighlight";
 
 const Index = () => (
   <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-black overflow-x-hidden">
@@ -16,6 +17,7 @@ const Index = () => (
       <Hero />
       <Differentials />
       <About />
+      <TeamHighlight />
       <Services />
       <Gallery />
       <Booking />
